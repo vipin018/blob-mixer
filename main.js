@@ -4,6 +4,8 @@ import vertexShader from './shaders/vertexShader.glsl';
 import fragmentShader from './shaders/fragmentShader.glsl';
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader';
+import  CustomShaderMaterial  from 'three-custom-shader-material/vanilla';
+import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 
 // Scene setup
 const scene = new THREE.Scene();
@@ -27,16 +29,20 @@ loader.load('https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/studio_small_0
 });
 
 // Create sphere
-const geometry = new THREE.SphereGeometry(1, 100, 100);
-const material = new THREE.MeshPhysicalMaterial({
+// const geometry = new THREE.IcosahedronGeometry(1, 100);
+const material = new CustomShaderMaterial({
+  baseMaterial: THREE.MeshPhysicalMaterial,
+  // wireframe: true,
   color: 'red',
-  envMap: scene.environment,
-  envMapIntensity: 1,
   roughness: 0,
   metalness: 0.1,
 });
 
-const sphere = new THREE.Mesh(geometry, material);
+const mergedGeometry = mergeVertices(new THREE.IcosahedronGeometry(1, 100));
+mergedGeometry.computeTangents();
+console.log(mergedGeometry.attributes)
+
+const sphere = new THREE.Mesh(mergedGeometry, material);
 scene.add(sphere);
 
 camera.position.z = 3;
@@ -57,7 +63,7 @@ window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
-  controls.reset().update();
+  // controls.reset().update();
 });
 
 animate();

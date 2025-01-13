@@ -13,3 +13,5 @@
 
 ## 5. create a file name vite.config.js and import glsl from 'vite-plugin-glsl'; also download the glsl plugin
 
+# why are we using meshphysicalmaterial instead of shader material?
+- because shader material cannot give us the reflection property of the environment but meshphysicalmaterial can
