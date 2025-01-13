@@ -37,7 +37,7 @@ loader.load('https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/studio_small_0
 const material = new CustomShaderMaterial({
   baseMaterial: THREE.MeshPhysicalMaterial,
   // wireframe: true,
-  color: '#DC143C',
+  map:new THREE.TextureLoader().load('./gradients/iridescent.png'),
   roughness: 0.5,
   metalness: 1,
 
