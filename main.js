@@ -8,7 +8,7 @@ import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader';
 import CustomShaderMaterial from 'three-custom-shader-material/vanilla';
 import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { Text } from 'troika-three-text';
-import { GUI } from 'lil-gui';
+// import { GUI } from 'lil-gui';
 import gsap from 'gsap';
 
 const blobs = [
@@ -19,16 +19,17 @@ const blobs = [
       "uPositionFrequency": 1,
       "uPositionStrength": 0.3,
       "uSmallWavePositionFrequency": 0.5,
-      "uSmallWavePositionStrength": 0.7,
-      "roughness": 1,
-      "metalness": 0,
+      "uSmallWavePositionStrength": 0.9,
+      "roughness": 0.2,
+      "metalness": 1,
       "envMapIntensity": 0.5,
       "clearcoat": 0,
       "clearcoatRoughness": 0,
       "transmission": 0,
       "flatShading": false,
       "wireframe": false,
-      "map": "cosmic-fusion"
+      "map": "cosmic-fusion",
+      "uSmallWaveTimeFrequency": 0.2
     },
   },
   {
@@ -47,7 +48,8 @@ const blobs = [
       "transmission": 0,
       "flatShading": false,
       "wireframe": false,
-      "map": "purple-rain"
+      "map": "purple-rain",
+      "uSmallWaveTimeFrequency": 0.1
     },
   },
   {
@@ -66,7 +68,8 @@ const blobs = [
       "transmission": 0,
       "flatShading": false,
       "wireframe": false,
-      "map": "lucky-fay"
+      "map": "lucky-fay",
+      "uSmallWaveTimeFrequency": 0.1
     },
   },
 ]
@@ -107,11 +110,7 @@ loader.load('https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/studio_small_0
 // const geometry = new THREE.IcosahedronGeometry(1, 100);
 const material = new CustomShaderMaterial({
   baseMaterial: THREE.MeshPhysicalMaterial,
-  // wireframe: true,
   map: new THREE.TextureLoader().load(`./gradients/${blobs[currentIndex].config.map}.png`),
-  roughness: 0.5,
-  metalness: 1,
-
   vertexShader,
   fragmentShader,
   uniforms: {
@@ -122,6 +121,8 @@ const material = new CustomShaderMaterial({
     uSmallWavePositionFrequency: { value: blobs[currentIndex].config.uSmallWavePositionFrequency },
     uSmallWavePositionStrength: { value: blobs[currentIndex].config.uSmallWavePositionStrength },
     uSmallWaveTimeFrequency: { value: blobs[currentIndex].config.uSmallWaveTimeFrequency },
+    roughness: { value: blobs[currentIndex].config.roughness },
+    metalness: { value: blobs[currentIndex].config.metalness },
   }
 });
 
@@ -138,25 +139,25 @@ camera.position.z = 2.9;
 // const controls = new OrbitControls(camera, renderer.domElement);
 
 // GUI setup
-const gui = new GUI();
-gui.domElement.style.position = 'absolute';
-gui.domElement.style.top = '10px';
-gui.domElement.style.right = '10px';
-gui.domElement.style.zIndex = '1000';
+// const gui = new GUI();
+// gui.domElement.style.position = 'absolute';
+// gui.domElement.style.top = '10px';
+// gui.domElement.style.right = '10px';
+// gui.domElement.style.zIndex = '1000';
 
-gui.add(material.uniforms.uTime, 'value', 0, 1, 0.01).name('Time');
-gui.add(material.uniforms.uPositionFrequency, 'value', 0, 10, 0.01).name('Position Frequency');
-gui.add(material.uniforms.uPositionStrength, 'value', 0, 10, 0.01).name('Position Strength');
-gui.add(material.uniforms.uTimeFrequency, 'value', 0, 10, 0.01).name('Time Frequency');
-gui.add(material.uniforms.uSmallWavePositionFrequency, 'value', 0, 10, 0.01).name('Small Wave Position Frequency');
-gui.add(material.uniforms.uSmallWavePositionStrength, 'value', 0, 10, 0.01).name('Small Wave Position Strength');
-gui.add(material.uniforms.uSmallWaveTimeFrequency, 'value', 0, 10, 0.01).name('Small Wave Time Frequency');
+// gui.add(material.uniforms.uTime, 'value', 0, 1, 0.01).name('Time');
+// gui.add(material.uniforms.uPositionFrequency, 'value', 0, 10, 0.01).name('Position Frequency');
+// gui.add(material.uniforms.uPositionStrength, 'value', 0, 10, 0.01).name('Position Strength');
+// gui.add(material.uniforms.uTimeFrequency, 'value', 0, 10, 0.01).name('Time Frequency');
+// gui.add(material.uniforms.uSmallWavePositionFrequency, 'value', 0, 10, 0.01).name('Small Wave Position Frequency');
+// gui.add(material.uniforms.uSmallWavePositionStrength, 'value', 0, 10, 0.01).name('Small Wave Position Strength');
+// gui.add(material.uniforms.uSmallWaveTimeFrequency, 'value', 0, 10, 0.01).name('Small Wave Time Frequency');
 
 // Additional GUI for color, metalness, roughness
-const materialProperties = gui.addFolder('Material Properties');
-materialProperties.addColor(material, 'color').name('Color');
-materialProperties.add(material, 'metalness', 0, 1, 0.01).name('Metalness');
-materialProperties.add(material, 'roughness', 0, 1, 0.01).name('Roughness');
+// const materialProperties = gui.addFolder('Material Properties');
+// materialProperties.addColor(material, 'color').name('Color');
+// materialProperties.add(material, 'metalness', 0, 1, 0.01).name('Metalness');
+// materialProperties.add(material, 'roughness', 0, 1, 0.01).name('Roughness');
 
 const clock = new THREE.Clock();
 
@@ -272,4 +273,3 @@ window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
   // controls.reset().update();
 });
-
