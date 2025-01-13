@@ -7,6 +7,10 @@ html,
 body {
 height: 100%;
 width: 100%;
+color: white;
+}
+body{
+  background-color: #222;
 }
 
 #canvas{
