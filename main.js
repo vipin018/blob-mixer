@@ -2,7 +2,8 @@ import './style.css';
 import * as THREE from 'three';
 import vertexShader from './shaders/vertexShader.glsl';
 import fragmentShader from './shaders/fragmentShader.glsl';
-// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import simplexNoise4d from './shaders/simplexNoise4d.glsl';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader';
 import  CustomShaderMaterial  from 'three-custom-shader-material/vanilla';
 import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
@@ -33,9 +34,11 @@ loader.load('https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/studio_small_0
 const material = new CustomShaderMaterial({
   baseMaterial: THREE.MeshPhysicalMaterial,
   // wireframe: true,
-  color: 'red',
+  color: '#DC143C',
   roughness: 0,
   metalness: 0.1,
+  vertexShader,
+  fragmentShader,
 });
 
 const mergedGeometry = mergeVertices(new THREE.IcosahedronGeometry(1, 100));
@@ -48,13 +51,13 @@ scene.add(sphere);
 camera.position.z = 3;
 
 // OrbitControls setup
-// const controls = new OrbitControls(camera, renderer.domElement);
+const controls = new OrbitControls(camera, renderer.domElement);
 
 // Animation loop
 function animate(time) {
   requestAnimationFrame(animate);
   // material.uniforms.time.value = time * 0.001;
-  // controls.update();
+  controls.update();
   renderer.render(scene, camera);
 }
 
