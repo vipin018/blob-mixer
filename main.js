@@ -28,7 +28,7 @@ const blobs = [
       "transmission": 0,
       "flatShading": false,
       "wireframe": false,
-      "map": "cosmic-fusion",
+      "map": "rainbow",
       "uSmallWaveTimeFrequency": 0.2
     },
   },
@@ -68,7 +68,7 @@ const blobs = [
       "transmission": 0,
       "flatShading": false,
       "wireframe": false,
-      "map": "lucky-fay",
+      "map": "lucky-day",
       "uSmallWaveTimeFrequency": 0.1
     },
   },
@@ -235,6 +235,13 @@ window.addEventListener('wheel', (event) => {
     ease: 'power1.inOut',
   })
 
+  gsap.to(sphere.rotation, {
+    // x: 0,
+    y: sphere.rotation.y + Math.PI * 4 * -direction,
+    duration: 1,
+    ease: 'power1.inOut',
+  })
+
   const bgColor = new THREE.Color(blobs[next].background);
   gsap.to(scene.background, {
     r: bgColor.r,
@@ -249,21 +256,24 @@ window.addEventListener('wheel', (event) => {
 })
 
 function updateMaterial(config) {
-  gsap.to(material.uniforms.uPositionFrequency, { value: config.uPositionFrequency, duration: 1, ease: 'power2.inOut' });
-  gsap.to(material.uniforms.uPositionStrength, { value: config.uPositionStrength, duration: 1, ease: 'power2.inOut' });
-  gsap.to(material.uniforms.uSmallWavePositionFrequency, { value: config.uSmallWavePositionFrequency, duration: 1, ease: 'power2.inOut' });
-  gsap.to(material.uniforms.uSmallWavePositionStrength, { value: config.uSmallWavePositionStrength, duration: 1, ease: 'power2.inOut' });
-  gsap.to(material.uniforms.uSmallWaveTimeFrequency, { value: config.uSmallWaveTimeFrequency, duration: 1, ease: 'power2.inOut' });
-  gsap.to(material.uniforms.roughness, { value: config.roughness, duration: 1, ease: 'power2.inOut' });
-  gsap.to(material.uniforms.metalness, { value: config.metalness, duration: 1, ease: 'power2.inOut' });
-  gsap.to(material.uniforms.envMapIntensity, { value: config.envMapIntensity, duration: 1, ease: 'power2.inOut' });
-  gsap.to(material.uniforms.clearcoat, { value: config.clearcoat, duration: 1, ease: 'power2.inOut' });
-  gsap.to(material.uniforms.clearcoatRoughness, { value: config.clearcoatRoughness, duration: 1, ease: 'power2.inOut' });
-  gsap.to(material.uniforms.transmission, { value: config.transmission, duration: 1, ease: 'power2.inOut' });
-  gsap.to(material.uniforms.flatShading, { value: config.flatShading, duration: 1, ease: 'power2.inOut' });
-  gsap.to(material.uniforms.wireframe, { value: config.wireframe, duration: 1, ease: 'power2.inOut' });
-  gsap.to(material.uniforms.map, { value: config.map, duration: 1, ease: 'power2.inOut' });
-  gsap.to(material.uniforms.uSmallWaveTimeFrequency, { value: config.uSmallWaveTimeFrequency, duration: 1, ease: 'power2.inOut' });
+  if (config.uPositionFrequency !== undefined) gsap.to(material.uniforms.uPositionFrequency, { value: config.uPositionFrequency, duration: 1, ease: 'power2.inOut' });
+  if (config.uPositionStrength !== undefined) gsap.to(material.uniforms.uPositionStrength, { value: config.uPositionStrength, duration: 1, ease: 'power2.inOut' });
+  if (config.uSmallWavePositionFrequency !== undefined) gsap.to(material.uniforms.uSmallWavePositionFrequency, { value: config.uSmallWavePositionFrequency, duration: 1, ease: 'power2.inOut' });
+  if (config.uSmallWavePositionStrength !== undefined) gsap.to(material.uniforms.uSmallWavePositionStrength, { value: config.uSmallWavePositionStrength, duration: 1, ease: 'power2.inOut' });
+  if (config.uSmallWaveTimeFrequency !== undefined) gsap.to(material.uniforms.uSmallWaveTimeFrequency, { value: config.uSmallWaveTimeFrequency, duration: 1, ease: 'power2.inOut' });
+  if (config.map !== undefined) {
+    setTimeout(() => {
+      material.map = new THREE.TextureLoader().load(`./gradients/${config.map}.png`);
+    }, 400);
+  }
+  if (config.roughness !== undefined) gsap.to(material, { roughness: config.roughness, duration: 1, ease: 'power2.inOut' });
+  if (config.metalness !== undefined) gsap.to(material, { metalness: config.metalness, duration: 1, ease: 'power2.inOut' });
+  if (config.envMapIntensity !== undefined) gsap.to(material, { envMapIntensity: config.envMapIntensity, duration: 1, ease: 'power2.inOut' });
+  if (config.clearcoat !== undefined) gsap.to(material, { clearcoat: config.clearcoat, duration: 1, ease: 'power2.inOut' });
+  if (config.clearcoatRoughness !== undefined) gsap.to(material, { clearcoatRoughness: config.clearcoatRoughness, duration: 1, ease: 'power2.inOut' });
+  if (config.transmission !== undefined) gsap.to(material, { transmission: config.transmission, duration: 1, ease: 'power2.inOut' });
+  if (config.flatShading !== undefined) gsap.to(material, { flatShading: config.flatShading, duration: 1, ease: 'power2.inOut' });
+  if (config.wireframe !== undefined) gsap.to(material, { wireframe: config.wireframe, duration: 1, ease: 'power2.inOut' });
 }
 
 
