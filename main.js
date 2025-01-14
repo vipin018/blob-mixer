@@ -111,7 +111,7 @@ const blobs = [
     },
   },
   {
-    name: 'Rainbow',
+    name: 'Hologram',
     background: '#45ACD8',
     config: {
       "map": "hologram",
@@ -225,7 +225,7 @@ const blobs = [
     },
   },
   {
-    name : 'purple rain',
+    name : 'Purple Rain',
     background: '#45ACD8',
     config: {
       "map": "purple-rain",
@@ -242,7 +242,26 @@ const blobs = [
       "flatShading": false,
       "wireframe": false,
     },
-  }
+  },
+  {
+    name: 'Rainbow',
+    background: '#45ACD8',
+    config: {
+      "map": "rainbow",
+      "uPositionFrequency": 1.322,
+      "uPositionStrength": .99,
+      "uSmallWavePositionFrequency": .78,
+      "uSmallWavePositionStrength": 2.1,
+      "roughness": 0.292,
+      "metalness": 0.73,
+      "envMapIntensity": 0.86,
+      "clearcoat": 1,
+      "clearcoatRoughness": 0,
+      "transmission": 0,
+      "flatShading": false,
+      "wireframe": false,
+    },
+  },
 ]
 
 let isAnimating = false;
