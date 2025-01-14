@@ -12,9 +12,9 @@ void main() {
 
     float twirlPeriod = sin(progress * PI * 2.);
 
-    float rotateAngle = -direction * pow(sin(progress * PI), 1.5) * PI * 2.;
+    float rotateAngle = -direction * pow(sin(progress * PI), 1.5) * PI *2.0;
 
-    float twirlAngle = -sin(uv.x - .5) * pow(twirlPeriod, 2.0) * -4.;
+    float twirlAngle = -sin(uv.x - .1) * pow(twirlPeriod, 2.0) * -10.;
 
     float twirlRotate = rotateAngle + twirlAngle;
 
