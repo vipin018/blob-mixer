@@ -16,6 +16,7 @@ const blobs = [
     name: 'Cosmic Bloom',
     background: '#2A2A2A',
     config: {
+      map: 'lucky-day',
       uPositionFrequency: 1.0,
       uPositionStrength: 0.4,
       uSmallWavePositionFrequency: 0.6,
@@ -28,6 +29,7 @@ const blobs = [
     name: 'Galactic Mirror',
     background: '#404040',
     config: {
+      map: 'cd',
       uPositionFrequency: 0.85,
       uPositionStrength: 0.55,
       uSmallWavePositionFrequency: 0.7,
@@ -40,6 +42,7 @@ const blobs = [
     name: 'Oceanic Abyss',
     background: '#1A1A1A',
     config: {
+      map:'ocean',
       uPositionFrequency: 1.2,
       uPositionStrength: 0.6,
       uSmallWavePositionFrequency: 0.8,
@@ -52,6 +55,7 @@ const blobs = [
     name: 'Foil Fusion',
     background: '#666666',
     config: {
+      map:'deep-ocean',
       uPositionFrequency: 1.05,
       uPositionStrength: 0.7,
       uSmallWavePositionFrequency: 0.6,
@@ -64,6 +68,7 @@ const blobs = [
     name: 'Dark Matter',
     background: '#333333',
     config: {
+      map:'black',
       uPositionFrequency: 0.9,
       uPositionStrength: 0.8,
       uSmallWavePositionFrequency: 0.9,
@@ -76,6 +81,7 @@ const blobs = [
     name: 'Shadow Realm',
     background: '#1F1F1F',
     config: {
+      map:'halloween',
       uPositionFrequency: 0.8,
       uPositionStrength: 0.6,
       uSmallWavePositionFrequency: 0.7,
@@ -88,6 +94,7 @@ const blobs = [
     name: 'Mystic Gray',
     background: '#4D4D4D',
     config: {
+      map:'imaginarium',
       uPositionFrequency: 0.9,
       uPositionStrength: 0.7,
       uSmallWavePositionFrequency: 0.6,
@@ -100,6 +107,7 @@ const blobs = [
     name: 'Charcoal Wave',
     background: '#595959',
     config: {
+      map:'iridescent',
       uPositionFrequency: 1.1,
       uPositionStrength: 0.9,
       uSmallWavePositionFrequency: 0.7,
@@ -112,6 +120,7 @@ const blobs = [
     name: 'Slate Dream',
     background: '#808080',
     config: {
+      map:'passion',
       uPositionFrequency: 0.7,
       uPositionStrength: 0.5,
       uSmallWavePositionFrequency: 0.8,
@@ -124,6 +133,7 @@ const blobs = [
     name: 'Obsidian Flow',
     background: '#262626',
     config: {
+      map:'pink-floyd',
       uPositionFrequency: 0.8,
       uPositionStrength: 0.8,
       uSmallWavePositionFrequency: 0.6,
@@ -136,6 +146,7 @@ const blobs = [
     name: 'Graphite Pulse',
     background: '#737373',
     config: {
+      map:'purple-rain',
       uPositionFrequency: 0.9,
       uPositionStrength: 0.7,
       uSmallWavePositionFrequency: 0.8,
@@ -148,6 +159,7 @@ const blobs = [
     name: 'Onyx Dream',
     background: '#0D0D0D',
     config: {
+      map:'rainbow',
       uPositionFrequency: 0.6,
       uPositionStrength: 0.6,
       uSmallWavePositionFrequency: 0.9,
@@ -160,6 +172,7 @@ const blobs = [
     name: 'Silver Mist',
     background: '#A6A6A6',
     config: {
+      map:'sunset-vibes',
       uPositionFrequency: 1.1,
       uPositionStrength: 0.7,
       uSmallWavePositionFrequency: 0.6,
@@ -172,6 +185,7 @@ const blobs = [
     name: 'Smoke Screen',
     background: '#4A4A4A',
     config: {
+      map:'white',
       uPositionFrequency: 1.0,
       uPositionStrength: 0.8,
       uSmallWavePositionFrequency: 0.8,
@@ -184,6 +198,7 @@ const blobs = [
     name: 'Carbon Black',
     background: '#1C1C1C',
     config: {
+      map:'carbon',
       uPositionFrequency: 0.7,
       uPositionStrength: 0.7,
       uSmallWavePositionFrequency: 0.7,
