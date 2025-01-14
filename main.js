@@ -54,7 +54,7 @@ const blobs = [
   },
   {
     name: 'Alien Goo',
-    background: '#45ACD8',
+    background: '#295E92',
     config: {
       "uPositionFrequency": 1.022,
       "uPositionStrength": 0.99,
@@ -73,8 +73,8 @@ const blobs = [
     },
   },
   {
-    name: 'Iridescent',
-    background: '#45ACD8',
+    name: 'Foil',
+    background: '#C7C3CD',
     config: {
       "map": "foil",
       "uPositionFrequency": 1.022,
@@ -93,7 +93,7 @@ const blobs = [
   },
   {
     name: 'Sirens',
-    background: '#45ACD8',
+    background: '#902B58',
     config: {
       "map": "halloween",
       "uPositionFrequency": 1.022,
@@ -112,7 +112,7 @@ const blobs = [
   },
   {
     name: 'Hologram',
-    background: '#45ACD8',
+    background: '#000284',
     config: {
       "map": "hologram",
       "uPositionFrequency": 1.022,
@@ -131,7 +131,7 @@ const blobs = [
   },
   {
     name: 'imaginarium',
-    background: '#45ACD8',
+    background: '#943F6E',
     config: {
       "map": "imaginarium",
       "uPositionFrequency": 1.022,
@@ -150,7 +150,7 @@ const blobs = [
   },
   {
     name: 'Iridescent',
-    background: '#45ACD8',
+    background: '#807B94',
     config: {
       "map": "iridescent",
       "uPositionFrequency": 1.022,
@@ -169,7 +169,7 @@ const blobs = [
   },
   {
     name: 'Lucky Day',
-    background: '#45ACD8',
+    background: '#AFCDC9',
     config: {
       "map": "lucky-day",
       "uPositionFrequency": 1.022,
@@ -188,7 +188,7 @@ const blobs = [
   },
   {
     name: 'Passion',
-    background: '#45ACD8',
+    background: '#DCA3A6',
     config: {
       "map": "passion",
       "uPositionFrequency": 1.02,
@@ -207,7 +207,7 @@ const blobs = [
   },
   {
     name:'Pink-floyd',
-    background: '#45ACD8',
+    background: '#CA364E',
     config: {
       "map": "pink-floyd",
       "uPositionFrequency": 1.022,
@@ -226,7 +226,7 @@ const blobs = [
   },
   {
     name : 'Purple Rain',
-    background: '#45ACD8',
+    background: '#10008D',
     config: {
       "map": "purple-rain",
       "uPositionFrequency": .022,
@@ -245,7 +245,7 @@ const blobs = [
   },
   {
     name: 'Rainbow',
-    background: '#45ACD8',
+    background: '#C39BA3',
     config: {
       "map": "rainbow",
       "uPositionFrequency": 1.322,
@@ -264,7 +264,7 @@ const blobs = [
   },
   {
     name : 'Sunset Vibes',
-    background: '#45ACD8',
+    background: '#FDB38A',
     config: {
       "map": "sunset-vibes",
       "uPositionFrequency": 1.022,
@@ -282,7 +282,7 @@ const blobs = [
     },
   },{
     name : 'White',
-    background: '#45ACD8',
+    background: '#657174',
     config: {
       "map": "white",
       "uPositionFrequency": 1.022,
