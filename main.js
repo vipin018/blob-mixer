@@ -14,7 +14,7 @@ import gsap from 'gsap';
 const blobs = [
   {
     name: 'Cosmic Bloom',
-    background: '#2A2A2A',
+    background: '#02446D',
     config: {
       map: 'lucky-day',
       uPositionFrequency: 1.0,
@@ -27,7 +27,7 @@ const blobs = [
   },
   {
     name: 'Galactic Mirror',
-    background: '#404040',
+    background: '#934124',
     config: {
       map: 'cd',
       uPositionFrequency: 0.85,
@@ -40,7 +40,7 @@ const blobs = [
   },
   {
     name: 'Oceanic Abyss',
-    background: '#1A1A1A',
+    background: '#9943D6',
     config: {
       map:'ocean',
       uPositionFrequency: 1.2,
@@ -53,7 +53,7 @@ const blobs = [
   },
   {
     name: 'Foil Fusion',
-    background: '#666666',
+    background: '#A82638',
     config: {
       map:'deep-ocean',
       uPositionFrequency: 1.05,
@@ -66,7 +66,7 @@ const blobs = [
   },
   {
     name: 'Dark Matter',
-    background: '#333333',
+    background: '#222222',
     config: {
       map:'black',
       uPositionFrequency: 0.9,
@@ -79,7 +79,7 @@ const blobs = [
   },
   {
     name: 'Shadow Realm',
-    background: '#1F1F1F',
+    background: '#D5B3A8',
     config: {
       map:'halloween',
       uPositionFrequency: 0.8,
@@ -92,7 +92,7 @@ const blobs = [
   },
   {
     name: 'Mystic Gray',
-    background: '#4D4D4D',
+    background: '#F66BE9',
     config: {
       map:'imaginarium',
       uPositionFrequency: 0.9,
@@ -105,7 +105,7 @@ const blobs = [
   },
   {
     name: 'Charcoal Wave',
-    background: '#595959',
+    background: '#81BEC7',
     config: {
       map:'iridescent',
       uPositionFrequency: 1.1,
@@ -118,7 +118,7 @@ const blobs = [
   },
   {
     name: 'Slate Dream',
-    background: '#808080',
+    background: '#F35437',
     config: {
       map:'passion',
       uPositionFrequency: 0.7,
@@ -131,7 +131,7 @@ const blobs = [
   },
   {
     name: 'Obsidian Flow',
-    background: '#262626',
+    background: '#AB8472',
     config: {
       map:'pink-floyd',
       uPositionFrequency: 0.8,
@@ -144,7 +144,7 @@ const blobs = [
   },
   {
     name: 'Graphite Pulse',
-    background: '#737373',
+    background: '#91A7BB',
     config: {
       map:'purple-rain',
       uPositionFrequency: 0.9,
@@ -157,7 +157,7 @@ const blobs = [
   },
   {
     name: 'Onyx Dream',
-    background: '#0D0D0D',
+    background: '#EA7267',
     config: {
       map:'rainbow',
       uPositionFrequency: 0.6,
@@ -170,7 +170,7 @@ const blobs = [
   },
   {
     name: 'Silver Mist',
-    background: '#A6A6A6',
+    background: '#E6999D',
     config: {
       map:'sunset-vibes',
       uPositionFrequency: 1.1,
@@ -196,7 +196,7 @@ const blobs = [
   },
   {
     name: 'Carbon Black',
-    background: '#1C1C1C',
+    background: '#173047',
     config: {
       map:'carbon',
       uPositionFrequency: 0.7,
