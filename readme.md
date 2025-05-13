@@ -1,6 +1,6 @@
 <!-- Steps to run the project -->
 
-## 1. create a new folder name blobmixer
+## 1. create a new folder name blob
 ## 2. run the command `npm create vite@latest`
 ## 3. run the command `npm install`
 ## 4. run the command `npm run dev`
@@ -14,4 +14,4 @@
 ## 5. create a file name vite.config.js and import glsl from 'vite-plugin-glsl'; also download the glsl plugin
 
 # why are we using meshphysicalmaterial instead of shader material?
-- because shader material cannot give us the reflection property of the environment but meshphysicalmaterial can
+- because shader material cannot give us the reflection property of the environment but meshphysicalmaterial cannot do that!!
